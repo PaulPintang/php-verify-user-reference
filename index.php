@@ -15,6 +15,7 @@
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Name" name="name">
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Course&Year" name="cyear">
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Student ID" name="studentId">
+            <input type="email" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="BU Email" name="buEmail">
             <!-- <input type="file"> -->
             <button type="submit" name="signup" class="bg-blue-300 p-2 rounded">Signup</button>
         </form>
@@ -24,7 +25,8 @@
              <h1 >Verify User</h1>
              <div class="relative">
                  <img src="./pngegg.png" alt="" style="width: 37px">
-                 <div class=" absolute bottom-4 right-0 bg-red-400 rounded-full flex justify-center items-center text-white" style="width: 18px; height: 18px; font-size: 12px">
+                 <div class=" absolute bottom-4 right-0 bg-red-400 rounded-full flex justify-center items-center text-white"
+                  style="width: 18px; height: 18px; font-size: 12px">
                    <?php echo $num_rows?>
                  </div>
              </div>
@@ -46,6 +48,9 @@
                             id
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            BU Email
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Action
                         </th>
                         </tr>
@@ -63,6 +68,9 @@
                                         </td>
                                         <td>
                                               <input type="text" name="studentId" value="<?php echo $row['studentId']; ?>" class="bg-transparent pl-6 focus:outline-none"readonly >
+                                        </td>
+                                        <td>
+                                              <input type="text" name="buEmail" value="<?php echo $row['buEmail']; ?>" class="bg-transparent pl-6 focus:outline-none"readonly >
                                         </td>
                                         <td>
                                                 <a href="index.php?decline=<?php echo $row['id']; ?>"
@@ -97,6 +105,9 @@
                             id
                         </th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            BU Email
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Status
                         </th>
                         </tr>
@@ -112,6 +123,9 @@
                                         </td>
                                         <td>
                                              <p class="pl-6"><?php echo $row['studentId']; ?></p>
+                                        </td>
+                                        <td>
+                                             <p class="pl-6"><?php echo $row['buEmail']; ?></p>
                                         </td>
                                         <td>
                                             <span class="px-2 ml-3 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
