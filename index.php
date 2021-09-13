@@ -20,7 +20,15 @@
         </form>
     </div>
     <div>
-        <h1 class="text-center text-2xl p-4 font-extrabold">Verify User</h1>
+        <div class="flex justify-center items-center text-2xl p-4 font-extrabold">
+             <h1 >Verify User</h1>
+             <div class="relative">
+                 <img src="./pngegg.png" alt="" style="width: 37px">
+                 <div class=" absolute bottom-4 right-0 bg-red-400 rounded-full flex justify-center items-center text-white" style="width: 18px; height: 18px; font-size: 12px">
+                   <?php echo $num_rows?>
+                 </div>
+             </div>
+        </div>
             <div class="flex flex-col mx-auto" style="width: 1100px;">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

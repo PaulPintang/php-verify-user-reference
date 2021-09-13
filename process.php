@@ -33,4 +33,8 @@
             header('location: index.php');
         }
 
+    $sql = "SELECT count(id) AS total FROM signupUser";
+    $rows_results = mysqli_query($db, $sql);
+    $values = mysqli_fetch_assoc($rows_results);
+    $num_rows = $values['total'];
 ?>
