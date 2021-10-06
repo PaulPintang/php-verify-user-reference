@@ -11,7 +11,7 @@
      <?php include('process.php'); ?>
      <h1 class="text-center text-2xl font-extrabold p-10 uppercase">for verification</h1>
     <div class="flex justify-center">
-        <form action="process.php" method="POST" enctype="multipart/form-data">
+        <form action="process.php" method="POST" enctype="multipart/form-data" class="flex gap-5">
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Name" name="name">
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Course&Year" name="cyear">
             <input type="text" class="p-1 rounded focus:outline-none border-2 focus:border-blue-300 border-gray-400" placeholder="Student ID" name="studentId">
@@ -25,7 +25,7 @@
              <h1 >Verify User</h1>
              <div class="relative">
                  <img src="./pngegg.png" alt="" style="width: 37px">
-                 <div class=" absolute bottom-4 right-0 bg-red-400 rounded-full flex justify-center items-center text-white"
+                 <div class=" absolute bottom-4 right-0 bg-red-400 rounded-full flex justify-center items-center text-white border-2 border-bg-white"
                   style="width: 18px; height: 18px; font-size: 12px">
                    <?php echo $num_rows?>
                  </div>

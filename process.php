@@ -1,7 +1,8 @@
 <?php
 
-    require_once("./PHPMailer/src/PHPMailer.php");
-    require_once("./PHPMailer/src/SMTP.php");
+    require("./PHPMailer/src/PHPMailer.php");
+    require("./PHPMailer/src/SMTP.php");
+    require("./PHPMailer/src/Exception.php");
 
     $db = mysqli_connect('localhost', 'root', '', 'db_signup');
 
@@ -30,34 +31,19 @@
         mysqli_query($db, "DELETE FROM signupUser WHERE id=$id");
 
         $body = "
-        <h1>Hi $name !!</h1>
-        <p>Were happy you signup to our department website <br>
-         You can now used your account !!</p>
+            <h1>Hi $name !!</h1>
+            <p>Were happy you signup to our department website <br>
+            You can now used your account !!</p>
         ";
 
-        $mail = new PHPMailer\PHPMailer\PHPMailer();
-        $mail->SMTPDebug = 3;
-        $mail->isSMTP();
-        $mail->Host = "mail.smtp2go.com";
-        $mail->SMTPAuth = true;
-        $mail->Username = "bicol-u.edu.ph";
-        $mail->Password = "Y203NDB1Znd2aWQw";
-        $mail->SMTPSecure = "tls";
-        $mail->Port = "2525";
-        $mail->From = "educdepartment@bicol-u.edu.ph";
-        $mail->FromName = "BUPC Education Department";
-        $mail->addAddress($buEmail);
-        $mail->isHTML(true);
-        $mail->Subject = "Your Account has been verified";
-        $mail->Body = $body;
-        $mail->AltBody = "This is the plain text version of the email content!";
+      
 
-        if (!$mail->send()) {
+        if (!$mail->Send()) {
             echo "Mailer Error";
         }else{
            echo '<script type="text/javascript">window.location="index.php"</script>';
         }
-
+        $mail->smtpClose();
     }
     
      if (isset($_GET['decline'])) {
